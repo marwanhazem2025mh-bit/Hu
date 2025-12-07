@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖Hekayetna-حكايتنا💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+	<div class="rose-petals" id="rosePetals"></div>
+    <div class="container main-page">
+        <h1>💖Hekayetna-حكايتنا💖</h1>
+			
+        <div class="password-input-container">
+            <div class="password-input">
+                <input type="password" id="passwordInput" class="password-segment" placeholder="Enter your password" autocomplete="off">
+            </div>
+			<div id="message"></div>
+        </div>
+		
+		<div class="btn-container">
+            <button class="submit-btn" id="accessBtn">go into my Heart</button>   
+        </div>
+		
+	</div>
+
+    <!-- Envelope Content Page (Replaces Text Page) -->
+    <div class="container content-page envelope-page" id="textPage">        
+        <h1>My Love Letter For You</h1>
+        <p class="instructions">Click on the envelope to reveal the surprise</p>
+        
+        <div class="envelope-container" id="envelopeContainer">
+            <div class="envelope" id="envelope">
+                <div class="envelope-front">
+                    <div class="envelope-flap" id="envelopeFlap"></div>
+                    <div class="heart">❤️</div>
+                </div>
+                <div class="envelope-back"></div>
+            </div>
+        </div>
+        
+        <div class="letter-container" id="letterContainer">
+            <div class="letter">
+                <div class="letter-content">
+                    <p>My Dearest Love,</p>
+                    
+                    <p>From the moment our eyes first met, I knew my life would never be the same. Your smile lights up my world, and your laughter is the sweetest melody my heart has ever known.</p>
+                    
+                    <p>Every day with you feels like a beautiful dream I never want to wake up from. You've shown me what true love means - patient, kind, and unconditional.</p>
+                    
+                    <p>I cherish every moment we share, from our quiet conversations to our adventurous journeys. With you, I've found my home, my peace, and my greatest joy.</p>
+                    
+                    <p>No words can truly capture the depth of my feelings for you, but I promise to spend my life showing you how much you mean to me.</p>
+                    
+                    <p class="signature">Forever Yours,<br>Your Beloved</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="submit-btn" id="nextToVideoBtn">Next surprise</button>
+        </div>
+    </div>
+
+    <!-- Video Content Page -->
+    <div class="container content-page" id="videoPage">
+        <h1>listen to this my lovely girl</h1>
+        <div class="page-content">
+            <div class="video-container">
+                <div class="video-wrapper">
+	
+                    <iframe id="contentVideo" src="" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="submit-btn" id="nextToHeartMessageBtn">Next surprise</button>
+        </div>
+    </div>
+
+    <!-- Heart Message Page -->
+    <div class="container content-page" id="heartMessagePage">
+        <h1>A Special Message For You</h1>
+        <div class="page-content">
+            <div class="heart-message-container">
+                <div class="photo-pair">
+                    <div class="top-photo">
+                        <img src="" alt="Top Photo" id="topHeartPhoto">
+                    </div>
+                    <div class="heart-with-text">
+                        <div class="beating-heart">
+                            ❤️
+                            <div class="heart-text">You Mean Everything To Me</div>
+                        </div>
+                    </div>
+                    <div class="bottom-photo">
+                        <img src="" alt="Bottom Photo" id="bottomHeartPhoto">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="submit-btn" id="nextToPhotosBtn2">Next surprise</button>
+        </div>
+    </div>
+
+    <!-- Photos Content Page -->
+    <div class="container content-page" id="photosPage">
+        <h1>Your Special Photos</h1>
+        <div class="page-content">
+            <div class="photos-container">
+                <div class="photo-slider" id="photoSlider">
+                    <!-- Photos will be dynamically added here -->
+                </div>
+                <button class="photo-nav prev-photo" onclick="changePhoto(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="photo-nav next-photo" onclick="changePhoto(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="photo-counter" id="photoCounter">1/4</div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="submit-btn" id="backToMainBtn">Back to Main</button>
+        </div>
+    </div>
+</body>
+</html>
