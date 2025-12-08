@@ -16,7 +16,6 @@ html, body {
 body {
     background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
     background-attachment: fixed;
-    color: white;
     min-height: 100vh;
     position: relative;
     margin: 0;
