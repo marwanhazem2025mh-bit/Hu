@@ -1,3 +1,4 @@
+/* Reset everything properly */
 * {
     margin: 0;
     padding: 0;
@@ -5,35 +6,26 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Fix html and body */
 html {
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
-	position: relative;
-    overflow-x: hidden;
-    background: #FFC0CB; /* Fallback color */
-    background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
     min-height: 100vh;
-    margin: 0;
-    padding: 20px;
+    background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
+    background-attachment: fixed;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: background 0.5s ease; 
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Remove the problematic container positioning */
 .container {
     max-width: 800px;
-    width: 90%; 
+    width: 90%;
     background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -41,14 +33,42 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px auto; /* Changed from absolute to auto margin */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Main page should be centered */
+.main-page {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-height: 90vh;
-    overflow-y: auto; 
-	margin: 0;
+    width: 90%;
+    max-width: 800px;
 }
+
+/* Content pages should stack normally */
+.content-page {
+    display: none;
+    margin: 20px auto; /* Center content pages */
+    position: relative;
+}
+
+/* Fix rose petals to cover full screen */
+.rose-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Keep all your existing styles below this line... */
+/* [All your existing CSS from line 38 onward remains the same] */
 
 h1 {
     color: #FFE6EA;
@@ -68,7 +88,6 @@ h1 {
 .password-input-container {
     margin: 30px 0;
     text-align: center;
-	
 }
 
 .password-input {
@@ -300,17 +319,6 @@ h1 {
     transform: translateY(0);
 }
 
-.rose-petals {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-}
-
 .petal {
     position: absolute;
     width: 20px;
@@ -329,9 +337,9 @@ h1 {
         transform: rotate(45deg) translateX(0);
     }
     100% {
-        top: 100vh; /* Changed from 100% to 100vh */
+        top: 100vh;
         opacity: 0;
-        transform: rotate(45deg) translateX(20px); /* Add some horizontal movement */
+        transform: rotate(45deg) translateX(20px);
     }
 }
 
@@ -368,7 +376,7 @@ h1 {
     border: none;
 }
 
-/* Photos Page - FIXED */
+/* Photos Page */
 .photos-container {
     width: 100%;
     max-width: 800px;
@@ -405,7 +413,6 @@ h1 {
     opacity: 1;
 }
 
-/* FIXED: Added missing closing brace */
 .photo-slide img {
     max-width: 100%;
     max-height: 100%;
@@ -425,7 +432,6 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* IMPROVED NAVIGATION BUTTONS */
 .photo-nav {
     position: absolute;
     top: 50%;
@@ -503,18 +509,85 @@ h1 {
     border: 1px solid #2196f3;
 }
 
+/* Heart Message Page Styles */
+.heart-message-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.photo-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.top-photo, .bottom-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-photo img, .bottom-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heart-with-text {
+    margin: 20px 0;
+}
+
+.beating-heart {
+    position: relative;
+    font-size: 80px;
+    text-align: center;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+}
+
+.heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
 /* Mobile-friendly touch improvements */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
-        margin: 10px;
+        margin: 10px auto;
+    }
+    
+    .main-page {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
     }
     
     h1 {
         font-size: 2rem;
     }
     
-    .password-segment, .username-segment {
+    .password-segment {
         height: 55px;
         font-size: 1.2rem;
         max-width: 100%;
@@ -569,6 +642,19 @@ h1 {
     .next-photo {
         right: 10px;
     }
+    
+    .top-photo, .bottom-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .beating-heart {
+        font-size: 60px;
+    }
+    
+    .heart-text {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -597,6 +683,22 @@ h1 {
     
     h1 {
         font-size: 1.8rem;
+    }
+    
+    .top-photo, .bottom-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .beating-heart {
+        font-size: 50px;
+    }
+    
+    .heart-text {
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: center;
+        width: 120px;
     }
 }
 
