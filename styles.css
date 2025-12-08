@@ -5,17 +5,29 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+	position: relative;
+    overflow-x: hidden;
+    background: #FFC0CB; /* Fallback color */
     background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-    background-size: cover;
-    color: white;
     min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     transition: background 0.5s ease; 
 }
 
@@ -35,6 +47,7 @@ body {
     transform: translate(-50%, -50%);
     max-height: 90vh;
     overflow-y: auto; 
+	margin: 0;
 }
 
 h1 {
