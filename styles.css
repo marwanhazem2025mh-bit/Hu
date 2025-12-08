@@ -1,12 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: cover;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
+    background-repeat: repeat-y;
     color: white;
     min-height: 100vh;
     display: flex;
