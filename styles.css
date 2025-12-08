@@ -7,7 +7,9 @@
 
 body {
     background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
-    background-repeat: repeat-y;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: cover;
     color: white;
     min-height: 100vh;
     display: flex;
@@ -286,14 +288,14 @@ h1 {
 }
 
 .rose-petals {
-    position: fixed; /* Change from absolute to fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     pointer-events: none;
     z-index: -1;
-    overflow: hidden; /* Prevent petals from going outside */
+    overflow: hidden;
 }
 
 .petal {
