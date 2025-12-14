@@ -8,7 +8,7 @@
 body {
     background: linear-gradient(90deg, #FFC0CB 0%, #A3001B 100%);
     color: white;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-height: 90vh;
+    max-height: 90dvh;
     overflow-y: auto; 
 }
 
@@ -313,7 +313,7 @@ h1 {
         transform: rotate(45deg) translateX(0);
     }
     100% {
-        top: 100vh; /* Changed from 100% to 100vh */
+        top: 100dvh; /* Changed from 100% to 100vh */
         opacity: 0;
         transform: rotate(45deg) translateX(20px); /* Add some horizontal movement */
     }
