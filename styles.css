@@ -14,6 +14,7 @@ body {
     align-items: center;
     padding: 20px;
     transition: background 0.5s ease; 
+    background-size: 100% 100%;
 }
 
 .container {
